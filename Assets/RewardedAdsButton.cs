@@ -11,14 +11,16 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
     void Awake()
     {
-        // Get the Ad Unit ID for the current platform:
+        // Получаем Ad Unit ID для текущей платформы:
 #if UNITY_IOS
-    _adUnitId = _iOSAdUnitId;
+        _adUnitId = _iOSAdUnitId;
 #elif UNITY_ANDROID
-    _adUnitId = _androidAdUnitId;
+        _adUnitId = _androidAdUnitId;
+#elif UNITY_EDITOR
+        _adUnitId = _androidAdUnitId; // В редакторе используем Android ID для тестов
 #endif
 
-        // Disable the button until the ad is ready to show:
+        // Отключаем кнопку, пока реклама не готова:
         _showAdButton.interactable = false;
     }
 
