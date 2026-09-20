@@ -1,11 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Purchasing;
 
 public class IAPController : MonoBehaviour
 {
-    public void OnPurchaseCompleted(string productId)
+    public void OnPurchaseComplete(Product product)
     {
-        Debug.Log("Purchase");
+        if (product.definition.id == "100Gold")
+        {
+            int currentGold = PlayerPrefs.GetInt("Gold", 0);
+            currentGold += 100;
+            PlayerPrefs.SetInt("Gold", currentGold);
+            PlayerPrefs.Save();
+
+            Debug.Log($"Покупка успешна! Выдано 100 золота. Всего: {currentGold}");
+        }
     }
 }

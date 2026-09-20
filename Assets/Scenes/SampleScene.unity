@@ -767,22 +767,22 @@ MonoBehaviour:
   onPurchaseCompleteLegacy:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1036280215}
+      - m_Target: {fileID: 1036280218}
         m_TargetAssemblyTypeName: IAPController, Assembly-CSharp
-        m_MethodName: OnPurchaseCompleted
-        m_Mode: 5
+        m_MethodName: OnPurchaseComplete
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 100Gold
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onPurchaseFailedLegacy:
     m_PersistentCalls:
       m_Calls: []
-  button: {fileID: 0}
+  button: {fileID: 814220223}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,8 +884,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1036280216}
-  - component: {fileID: 1036280215}
   - component: {fileID: 1036280217}
+  - component: {fileID: 1036280218}
   m_Layer: 0
   m_Name: Store
   m_TagString: Untagged
@@ -893,18 +893,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1036280215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036280214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd38d91b3698404c972c1b162cff793, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1036280216
 Transform:
   m_ObjectHideFlags: 0
@@ -935,6 +923,18 @@ MonoBehaviour:
   _androidGameId: 800375829
   _iOSGameId: 800375829
   _testMode: 1
+--- !u!114 &1036280218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036280214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd38d91b3698404c972c1b162cff793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1961123000
 GameObject:
   m_ObjectHideFlags: 0
