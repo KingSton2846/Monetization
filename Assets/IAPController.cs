@@ -3,16 +3,19 @@ using UnityEngine.Purchasing;
 
 public class IAPController : MonoBehaviour
 {
-    public void OnPurchaseComplete(Product product)
+    public void OnOrderPending(PendingOrder pendingOrder)
     {
-        if (product.definition.id == "100Gold")
+        foreach (var item in pendingOrder.CartOrdered.Items())
         {
-            int currentGold = PlayerPrefs.GetInt("Gold", 0);
-            currentGold += 100;
-            PlayerPrefs.SetInt("Gold", currentGold);
-            PlayerPrefs.Save();
+            if (item.Product.definition.id == "100Gold")
+            {
+                int currentGold = PlayerPrefs.GetInt("Gold", 0);
+                currentGold += 100;
+                PlayerPrefs.SetInt("Gold", currentGold);
+                PlayerPrefs.Save();
 
-            Debug.Log($"Покупка успешна! Выдано 100 золота. Всего: {currentGold}");
+                Debug.Log($"Заказ в процессе! Выдано 100 золота. Всего: {currentGold}");
+            }
         }
     }
 }
